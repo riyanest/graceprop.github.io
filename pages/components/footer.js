@@ -67,7 +67,7 @@ function Footer(props) {
         </div>
         <div id="verticalline"></div>
         <div >
-                <div className="copywright " style={{padding:"20px",color:"black"}}>©2021By Riya Qureshi. Proudly created by <a href="https://www.instagram.com/riyanest/?hl=en">@Riyanest</a></div>
+                <div className="copywright " style={{padding:"20px",color:"black"}}>©2021By Grace property. Proudly created by <a href="https://www.instagram.com/riyanest/?hl=en">@Riyanest</a></div>
         </div>
 </div>
     )

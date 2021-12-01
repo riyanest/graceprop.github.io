@@ -24,14 +24,7 @@ function onSearch(val) {
 function callback(key) {
   console.log(key);
 }
-const contentStyle = {
-    height: '200px',
-    width:"200px",
-    boxShadow: '0 1px 1px rgb(0 0 0 / 8%), 0 2px 2px rgb(0 0 0 / 12%), 0 4px 4px rgb(0 0 0 / 16%), 0 8px 8px rgb(0 0 0 / 20%)',
-    background: 'white',
-    margin:'10px',
-    borderRadius: '16px'
-  };
+
 class Searchbar extends React.Component {
     constructor(props) {
         super(props);
@@ -410,34 +403,7 @@ data:{
                                     
                                  <button className="searchbutton">Search</button>
                         </TabPane>
-
                     </Tabs>
-                  
-            </div>
-            <div>
-            <h1>Properties</h1>
-            <div  style={{display:'flex',overflowX:'scroll',verticalline:"middle"}}>
-                
-                <div>
-                  <h3 style={contentStyle}>1</h3>
-                </div>
-                <div>
-                  <h3 style={contentStyle}>2</h3>
-                </div>
-                <div>
-                  <h3 style={contentStyle}>3</h3>
-                </div>
-                <div>
-                  <h3 style={contentStyle}>4</h3>
-                </div>
-                <div>
-                  <h3 style={contentStyle}>4</h3>
-                </div>                <div>
-                  <h3 style={contentStyle}>4</h3>
-                </div>                <div>
-                  <h3 style={contentStyle}>4</h3>
-                </div>
-                </div>
             </div>
                 </div>
                 )
