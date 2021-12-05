@@ -65,7 +65,7 @@ class Searchbar extends React.Component {
 // Make a request for a user with a given ID
 console.log(this.state)
 axios({method: 'get', 
-url:'http://localhost:5000/data/specificProperties',
+url:'https://rectangular-sulfuric-winterberry.glitch.me/data/specificProperties',
 data:{
     apartmentType:this.state.type,
     address:this.state.location,

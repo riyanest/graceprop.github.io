@@ -46,14 +46,14 @@ class Header extends React.Component {
             </ul> */}
             <ul className="navbarlist">         
                         <button className="switchsvg exitbar" type="button" onClick={()=>control(0)}>X</button>
-                        <li className=" headd heading switchsvg" data-text="Home">
-                            <span>Home</span>
+                        <li className=" headd heading switchsvg" data-text="Property">
+                            <span>Property</span>
                         </li>
-                        <li className=" headd heading switchsvg" data-text="Properties">
-                            <span>Properties</span>
+                        <li className=" headd heading switchsvg" data-text="Services">
+                            <span>Services</span>
                         </li>
-                        <li className=" headd heading switchsvg" data-text="Property News">
-                            <span>Property News</span>
+                        <li className=" headd heading switchsvg" data-text="News">
+                            <span>News</span>
                         </li>
                         </ul>
 
