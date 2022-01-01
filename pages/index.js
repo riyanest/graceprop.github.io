@@ -12,13 +12,26 @@ const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
  var axios = require('axios');
 export default function Home() {
   const [pageIsMounted, setPageIsMounted] = useState(false)
+  const [properties, setproperties] = useState([])
   useEffect(() => {
     setPageIsMounted(true)
-    var map = new mapboxgl.Map({
-      container: 'YOUR_CONTAINER_ELEMENT_ID',
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [72.877655,19.075983 ], zoom: 10 ,
-    });
+    // var map = new mapboxgl.Map({
+    //   container: 'YOUR_CONTAINER_ELEMENT_ID',
+    //   style: 'mapbox://styles/mapbox/streets-v11',
+    //   center: [72.877655,19.075983 ], zoom: 10 ,
+    // });
+    axios({method: 'get', 
+    url:'https://rectangular-sulfuric-winterberry.glitch.me/data/allpublicProperties',
+    })
+      .then(function (response) {
+        setproperties([response.data]);
+        console.log(properties)
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
 }, [])
 const contentStyle = {
   height: '200px',
@@ -45,7 +58,16 @@ function handleChange(value) {
 
       <main >
         <Header/>
-        <div style={{height:"700px",width:'100%',position:'relative'}}>
+        <div className="banner">
+          <div className="banner-text">
+<h1 className="banner-title">            Find Real Estate<br/> 
+            That suits you.</h1>
+            <p className="banner-text-c">Family run property consultantcy specialised in Residential, Commercial, Projects<br/> as well as investment with best analysis for your yield</p>
+            <button className="banbutton">Get Started</button>
+          </div>
+
+        </div>
+        {/* <div style={{height:"700px",width:'100%',position:'relative'}}>
           <Searchbar/>
           <br/>        <br/>   
           <div>
@@ -54,14 +76,17 @@ function handleChange(value) {
         </div>
           <br/>        <br/>   <br/>        <br/>
         <br/>        <br/>     
-        <div>
+  <div> */}
             <h1>Properties</h1>
         <div  style={{display:'flex',overflowX:'scroll',verticalline:"middle"}}>
-                
-                <div>
-                  <h3 style={contentStyle}>1</h3>
-                </div>
-                <div>
+        {properties.map((prop) =>
+          <div>
+            <h1>{prop.Bhksize}</h1>
+             {/* <h1>{prop.propertyProfile.price}</h1>  */}
+           </div>
+        )}  
+  </div>
+                {/* <div>
                   <h3 style={contentStyle}>2</h3>
                 </div>
                 <div>
@@ -76,11 +101,11 @@ function handleChange(value) {
                   <h3 style={contentStyle}>4</h3>
                 </div>                <div>
                   <h3 style={contentStyle}>4</h3>
-                </div>
-                </div>
-                </div>
+                </div> */}
+                {/* </div>
+                </div> */}
 
-                <div>
+                {/* <div>
             <h2>Projects in mumbai</h2>
         <div  style={{display:'flex',overflowX:'scroll',verticalline:"middle"}}>
                 
@@ -104,9 +129,9 @@ function handleChange(value) {
                   <h3 style={contentStyle}>4</h3>
                 </div>
                 </div>
-                </div>
+                </div> */}
 
-                <div>
+                {/* <div>
             <h1>News</h1>
         <div  style={{display:'flex',overflowX:'scroll',verticalline:"middle"}}>
                 
@@ -130,7 +155,7 @@ function handleChange(value) {
                   <h3 style={contentStyle}>4</h3>
                 </div>
                 </div>
-                </div>
+                </div> */}
 
 
         <br/>
