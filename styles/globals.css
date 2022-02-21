@@ -187,7 +187,7 @@ a {
 	border: none;
 	background: transparent;
 }
-.logocont {
+.cont {
 	overflow: hidden;
 }
 .logofont {
@@ -277,12 +277,12 @@ a {
 
 .heading {
 	overflow: hidden;
-	line-height: 3;
+	line-height: 4;
 	font-weight: 600;
 	margin-left: 10px;
 	margin-right: 10px;
 	border: none;
-	/* font-size: 20px; */
+	font-size: 21px;
 }
 
 .heading::before {
@@ -475,4 +475,9 @@ a {
 .banbutton:hover {
 	background-color: black;
 	color: white;
+}
+.scrollview {
+	display: flex;
+	overflow: scroll;
+	width: 100vw;
 }

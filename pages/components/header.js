@@ -25,9 +25,9 @@ class Header extends React.Component {
                 +91 9702012460
             </div>
         </div> */}
-        <div className="buttonsbar00 mainbar resizable" style={{justifyContent:"space-between",padding:20,}}>
+        <div className="buttonsbar00 mainbar resizable" style={{justifyContent:"space-between",padding:6,}}>
             <div className="logocont" style={{paddingLeft: "20px"}}>
-                    <Image width="100px" height="50px" src="/logo.png"/>
+                    <Image width="80px" height="80px" src="/logo.webp"/>
             </div>
             {/* <ul className="list" style={{display:"flex"}}>
                     <li><a href="https://www.instagram.com/rrriiiyyaa/">
