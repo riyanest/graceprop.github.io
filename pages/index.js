@@ -71,7 +71,7 @@ function handleChange(value) {
             <h1>Properties</h1>
         <div  style={{display:'flex',overflowX:'scroll',verticalline:"middle"}}>
         {properties.map((prop) =>
-          <div className="property">
+          <div key={prop._id} className="property">
           <h4>{prop.Bhksize}Bhk {prop.apartmentType}</h4>
             <h3>₹{prop.propertyProfile.price}|{prop.Area}Sqft</h3>
             <h4>{prop.address.location}</h4>
