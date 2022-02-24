@@ -5,9 +5,8 @@ class Header extends React.Component {
         
         function control(yolo)
         {if(yolo==1){
-            document.getElementsByClassName("navbarlist")[0].style.backgroundColor="white";
             document.getElementsByClassName("navbarlist")[0].style.opacity="1";
-                document.getElementsByClassName("navbarlist")[0].style.height="300px"; 
+                document.getElementsByClassName("navbarlist")[0].style.height="100Vh"; 
                 document.getElementsByClassName("navbarlist")[0].style.padding="50px"; 
             }
         else if(yolo==0){     
@@ -25,11 +24,11 @@ class Header extends React.Component {
                 +91 9702012460
             </div>
         </div> */}
-        <div className="buttonsbar00 mainbar resizable" style={{justifyContent:"space-between",padding:6,}}>
+        <div className="buttonsbar00 resizable" style={{justifyContent:"space-between",padding:6,}}>
             <div className="logocont" style={{paddingLeft: "20px"}}>
                     <Image width="80px" height="80px" src="/logo.webp"/>
             </div>
-            {/* <ul className="list" style={{display:"flex"}}>
+             <ul className="list" style={{display:"flex",verticalAlign:"center"}}>
                     <li><a href="https://www.instagram.com/rrriiiyyaa/">
                             <svg className="svg" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}}>
                                     <path d="M352,0H160C71.648,0,0,71.648,0,160v192c0,88.352,71.648,160,160,160h192c88.352,0,160-71.648,160-160V160 C512,71.648,440.352,0,352,0z M464,352c0,61.76-50.24,112-112,112H160c-61.76,0-112-50.24-112-112V160C48,98.24,98.24,48,160,48 h192c61.76,0,112,50.24,112,112V352z"/>
@@ -43,9 +42,9 @@ class Header extends React.Component {
                             </svg>
                     </a></li>
 
-            </ul> */}
+            </ul> 
             <ul className="navbarlist">         
-                        <button className="switchsvg exitbar" type="button" onClick={()=>control(0)}>X</button>
+
                         <li className=" headd heading switchsvg" data-text="Property">
                             <span>Property</span>
                         </li>
@@ -55,26 +54,19 @@ class Header extends React.Component {
                         <li className=" headd heading switchsvg" data-text="News">
                             <span>News</span>
                         </li>
+                        <button className="switchsvg exitbar" type="button" onClick={()=>control(0)}>X</button>
                         </ul>
+                        
 
         </div>
         <button className="navbarbutton switch" onClick={()=>control(1)}>
-        <svg style={{wclassNameth:"30px",height:"30px",width:'30px',enableBackground:"new 0 0 394.971 394.971"}} viewBox="0 0 48 48" width="48px" height="48px">
-            <linearGradient id="EIPc0qTNCX0EujYwtxKaXa" x1="12.066" x2="34.891" y1=".066" y2="22.891" gradientUnits="userSpaceOnUse">
-               <stop offset=".237" stopColor="#f6bc1a"/>
-               <stop offset=".85" stopColor="#ff0000"/>
-            </linearGradient>
-            <path fill="url(#EIPc0qTNCX0EujYwtxKaXa)" d="M43,15H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,14.1,44.1,15,43,15z"/>
-            <linearGradient id="EIPc0qTNCX0EujYwtxKaXb" x1="12.066" x2="34.891" y1="12.066" y2="34.891" gradientUnits="userSpaceOnUse">
-                <stop offset=".237" stopColor="#f6bc1a"/>
-                <stop offset=".85" stopColor="#ff0000"/>
-            </linearGradient>
-            <path fill="url(#EIPc0qTNCX0EujYwtxKaXb)" d="M43,27H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,26.1,44.1,27,43,27z"/>
-            <linearGradient id="EIPc0qTNCX0EujYwtxKaXc" x1="12.066" x2="34.891" y1="24.066" y2="46.891" gradientUnits="userSpaceOnUse">
-                <stop offset=".237" stopColor="#f6bc1a"/>
-                <stop offset=".85" stopColor="#ff0000"/>
-            </linearGradient>
-            <path fill="url(#EIPc0qTNCX0EujYwtxKaXc)" d="M43,39H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,38.1,44.1,39,43,39z"/></svg>
+        <svg style={{wclassNameth:"30px",height:"30px",width:'30px',fill:"white"}} viewBox="0 0 48 48" width="48px" height="48px">
+            
+            <path  d="M43,15H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,14.1,44.1,15,43,15z"/>
+            
+            <path  d="M43,27H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,26.1,44.1,27,43,27z"/>
+            
+            <path  d="M43,39H5c-1.1,0-2-0.9-2-2v-2c0-1.1,0.9-2,2-2h38c1.1,0,2,0.9,2,2v2C45,38.1,44.1,39,43,39z"/></svg>
         </button>            
     </div>
         )

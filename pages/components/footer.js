@@ -3,7 +3,9 @@ import {MailOutlined,PhoneOutlined } from '@ant-design/icons'
 function Footer(props) {
     return (  
         <div id="footer">
-
+            <div className="logocont" style={{paddingLeft: "20px"}}>
+                    <Image width="80px" height="80px" src="/logo.webp"/>
+            </div>
         <div className="fcontent resizable">
 
                 <div id="contact-us" className="cardlayout" >
