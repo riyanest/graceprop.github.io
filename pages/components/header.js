@@ -15,7 +15,7 @@ class Header extends React.Component {
             }
         }
     return (  
-    <div style={{width:"100%",zIndex:"2"}}>
+    <div style={{position:'fixed',width:"100%",zIndex:"2",backgroundColor: 'rgba(255, 255, 255, 0.3)',boxShadow:'inset 0 0 0 200px rgb(255 255 255/ 8%)',backdropFilter:'blur(8px)'}}>
         {/* <div className="yarr" style={{}}>
             <div className="left" style={{height:"40px",backgroundColor:"#FFA500"}}>
             info@munafproperty.com
