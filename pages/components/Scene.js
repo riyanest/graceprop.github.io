@@ -1,12 +1,12 @@
-import { Scroll, ScrollControls } from '@react-three/drei'
-import { useFrame , useLoader } from '@react-three/fiber'
-import React,{ useRef } from 'react'
+import { Scroll,Point, Points, ScrollControls } from '@react-three/drei'
+import { useFrame , useLoader,useThree ,Canvas} from '@react-three/fiber'
+import React,{ useRef,Suspense }  from 'react'
 import * as THREE from 'three'
-import House from './house'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import Html from './Html'
-import earthImg from '../../public/worldMap.jpg'
-import Particles from './particles'
+// import Particles from './particles'
+
+
 const Sphere=()=>{
   const base = useLoader(TextureLoader, 'worldMap.jpg')
   const ref=useRef()
@@ -22,16 +22,45 @@ const Sphere=()=>{
      </mesh>
   )
 }
+
+const particleColors = ['#673ab7', '#f4b677', 'orange', 'blue', '#8bc34a', 'purple']
+
+const Particles=({ size = 5000 })=> {
+  const { width, height } = useThree((state) => state.viewport)
+  return (
+    <Points limit={size}>
+      <pointsMaterial size={0.1} vertexColors />
+      {Array.from({ length: size }).map((_, i) => (
+        <Point
+          key={i}
+          position={[(0.5 - Math.random()) * width * 2, 0.5 * height + Math.random() ** 0.25 * height * -3, (0.5 - Math.random()) * 25]}
+          color={particleColors[Math.floor(Math.random() * (particleColors.length - 1))]}
+        />
+      ))}
+    </Points>
+  )
+}
+
 export default function Scene() {
-  useFrame(({ mouse, camera }) => {
-    camera.position.x = THREE.MathUtils.lerp(camera.position.x, mouse.x * 0.5, 0.03)
-    camera.position.y = THREE.MathUtils.lerp(camera.position.y, mouse.y * 0.8, 0.01)
-    camera.position.z = THREE.MathUtils.lerp(camera.position.z, Math.max(4, Math.abs(mouse.x * mouse.y * 8)), 0.01)
-    camera.rotation.y = THREE.MathUtils.lerp(camera.rotation.y, mouse.x * -Math.PI * 0.025, 0.001)
-  })
+  // useFrame(({ mouse, camera }) => {
+  //   camera.position.x = THREE.MathUtils.lerp(camera.position.x, mouse.x * 0.5, 0.03)
+  //   camera.position.y = THREE.MathUtils.lerp(camera.position.y, mouse.y * 0.8, 0.01)
+  //   camera.position.z = THREE.MathUtils.lerp(camera.position.z, Math.max(4, Math.abs(mouse.x * mouse.y * 8)), 0.01)
+  //   camera.rotation.y = THREE.MathUtils.lerp(camera.rotation.y, mouse.x * -Math.PI * 0.025, 0.001)
+  // })
   return (
     <>
-    <ScrollControls pages={2}>
+     <Canvas
+      style={{ width:'100vw'
+    ,height:'100vh'}}
+        shadows={true}
+        camera={{
+          position: [0, 3, 9],
+        }}
+      >
+        <ambientLight/>
+        <Suspense fallback={null}>
+        <ScrollControls pages={2}>
       <Scroll>
       <Sphere/>
 <Particles/>
@@ -50,6 +79,9 @@ export default function Scene() {
         <Html />
       </Scroll>
     </ScrollControls>
+        </Suspense>
+      </Canvas>
+
     </>
   )
 }
