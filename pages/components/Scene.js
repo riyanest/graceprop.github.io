@@ -6,7 +6,7 @@ import House from './house'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import Html from './Html'
 import earthImg from '../../public/worldMap.jpg'
-import { Particles } from './particles'
+import Particles from './particles'
 const Sphere=()=>{
   const base = useLoader(TextureLoader, 'worldMap.jpg')
   const ref=useRef()

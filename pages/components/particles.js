@@ -6,7 +6,6 @@ const particleColors = ['#673ab7', '#f4b677', 'orange', 'blue', '#8bc34a', 'purp
 
 function Particles({ size = 5000 }) {
   const { width, height } = useThree((state) => state.viewport)
-
   return (
     <Points limit={size}>
       <pointsMaterial size={0.1} vertexColors />
@@ -20,5 +19,4 @@ function Particles({ size = 5000 }) {
     </Points>
   )
 }
-
-export { Particles }
+export default Particles 
