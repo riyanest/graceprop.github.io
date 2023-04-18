@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import {MailOutlined,PhoneOutlined } from '@ant-design/icons'
+// import {MailOutlined,PhoneOutlined } from '@ant-design/icons'
 function Footer(props) {
     return (  
         <div id="footer">
@@ -21,9 +21,9 @@ function Footer(props) {
                                     Mumbai, Maharashtra, India
                                 </li>
                                 <li className="softbox"> 
-                                        <a><MailOutlined /> itsgraceproperties@gmail.com</a><br/>
-                                        <a  href="tel:+910819907609"><PhoneOutlined />9819907609</a><br/>
-                                        <a href="tel:+918356002321"><PhoneOutlined />8356002321</a><br/>
+                                        <a> itsgraceproperties@gmail.com</a><br/>
+                                        <a  href="tel:+910819907609">/9819907609</a><br/>
+                                        <a href="tel:+918356002321">8356002321</a><br/>
                                 </li>
                         </ul>
                         <ul  style={{display:"flex",justifyContent: "center",listStyleType:"none"}}>

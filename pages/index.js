@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import {react,useEffect,useRef, useState} from 'react'
-
+import Pano from "./components/pano";
 import Header from './components/header';
 const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 import Footer from './components/footer';
@@ -19,11 +19,15 @@ export default function Home() {
     //   center: [72.877655,19.075983 ], zoom: 10 ,
     // });
     axios({method: 'get', 
-    url:'https://rectangular-sulfuric-winterberry.glitch.me/data/allpublicProperties',
+    url:'https://rectangular-sulfuric-winterberry.glitch.me/data/allProperties',
     })
       .then(function (response) {
         setproperties([response.data.properties]);
-        //  console.log(response.data.properties);
+        console.log(response.data.properties);
+        // for (var i = 0; i < response.data.properties.length;)
+        //   {
+        //     console.log(response.data.properties.propertyProfile)
+        //   }
       })
       .catch(function (error) {
         // handle error
@@ -53,8 +57,19 @@ function handleChange(value) {
             That suits you.</h1>
             <p className="banner-text-c">Family run property consultantcy specialised in Residential, Commercial, Projects<br/> as well as investment with best analysis for your yield</p>
             <button className="banbutton">Get Started</button>
-          </div>
-
+          </div >
+          <div style={{	padding:'2% 10% 0% 10%'}}>
+          <h1 style={{color:'white'}}>Properties around you</h1>
+        <div  style={{display:'flex',overflowX:'scroll',verticalline:"middle"}}>
+        {properties.map((prop) =>
+          <div key={prop._id} className="property">
+          <h4>{prop.Bhksize}Bhk {prop.apartmentType}</h4>
+            {/* <h3>₹{prop.propertyProfile.price}|{prop.Area}Sqft</h3> */}
+            {/* <h4>{prop.address.location}</h4> */}
+              {/* <h4>{prop.propertyProfile.status}</h4> */}
+           </div>
+        )}  
+  </div></div>
         </div>
         {/* <div style={{height:"700px",width:'100%',position:'relative'}}>
           <Searchbar/>
@@ -66,17 +81,11 @@ function handleChange(value) {
           <br/>        <br/>   <br/>        <br/>
         <br/>        <br/>     
   <div> */}
-            {/* <h1>Properties</h1>
-        <div  style={{display:'flex',overflowX:'scroll',verticalline:"middle"}}>
-        {properties.map((prop) =>
-          <div key={prop._id} className="property">
-          <h4>{prop.Bhksize}Bhk {prop.apartmentType}</h4>
-            <h3>₹{prop.propertyProfile.price}|{prop.Area}Sqft</h3>
-            <h4>{prop.address.location}</h4>
-              <h4>{prop.propertyProfile.status}</h4>
-           </div>
-        )}  
-  </div> */}
+
+  <div>
+  <Pano />
+  </div>
+          
             {/* <div className="scrollview">
                  <div>
                   <h3 style={contentStyle}>2</h3>
@@ -96,7 +105,12 @@ function handleChange(value) {
                 </div> 
                   </div> 
             </div>    </div> */}
+<br/>
+<br/>
+<br/>
+<br/><br/>
 
+<div style={{	padding:'5% 10% 0% 10%'}}>
             <h1 style={{margin:'10px'}}>Services</h1>
        
         <div className="scrollview">
@@ -139,7 +153,7 @@ function handleChange(value) {
                 </div>
        
             </div>   
-  
+            </div>
                 {/* <div>
             <h2>Projects in mumbai</h2>
         <div  style={{display:'flex',overflowX:'scroll',verticalline:"middle"}}>
